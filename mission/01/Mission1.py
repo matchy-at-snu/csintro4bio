@@ -29,7 +29,7 @@ def writeResult(
     sSpecies, nMonoNtDict, fMonoFreqDict, nDiNtDict, fExpDiFreqDict, fDiFreqDict
 ):
     # output the results into ./solutions/
-    out_dir = pathlib.Path(__file__) / "solutions"
+    out_dir = pathlib.Path(__file__).parent / "solutions"
     out_dir.mkdir(exist_ok=True)
     sFileName = "{}genome.solutions.txt".format(sSpecies)
 
