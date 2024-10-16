@@ -38,11 +38,43 @@ fi
 # get project root
 PROJECT_ROOT=$(git rev-parse --show-toplevel)
 
+curr_dir=$(pwd)
+
+# Human
 mkdir -p "$PROJECT_ROOT/data/hg38"
+# chicken
+mkdir -p "$PROJECT_ROOT/data/galGal3"
+# C. elegans
+mkdir -p "$PROJECT_ROOT/data/ce10"
+
+
 cd "$PROJECT_ROOT/data"
 
+# Human
 downloadFile "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.chromFa.tar.gz" "hg38.chromFa.tar.gz"
 
+# Chicken
+downloadFile "https://hgdownload.soe.ucsc.edu/goldenPath/galGal3/bigZips/chromFa.tar.gz" "galGal3.chromFa.tar.gz"
+
+# C. elegans
+downloadFile "https://hgdownload.soe.ucsc.edu/goldenPath/ce10/bigZips/chromFa.tar.gz" "ce10.chromFa.tar.gz"
+
+# Drosophila Melanogaster
+downloadFile "https://hgdownload.soe.ucsc.edu/goldenPath/dm3/bigZips/chromFa.tar.gz" "dm3.chromFa.tar.gz"
+
 # Extract the downloaded file to the hg38 directory
-tar -xzf hg38.chromFa.tar.gz -C hg38
+echo "Extracting Human genome..."
+pv hg38.chromFa.tar.gz | tar -xz -C hg38
+echo "Extracting Chicken genome..."
+pv galGal3.chromFa.tar.gz | tar -xz -C galGal3
+echo "Extracting C. elegans genome..."
+pv ce10.chromFa.tar.gz | tar -xz -C ce10
+echo "Extracting Drosophila Melanogaster genome..."
+pv dm3.chromFa.tar.gz | tar -xz -C dm3
+
 rm hg38.chromFa.tar.gz
+rm galGal3.chromFa.tar.gz
+rm ce10.chromFa.tar.gz
+rm dm3.chromFa.tar.gz
+
+cd "$curr_dir"
