@@ -1,5 +1,6 @@
 import os
 import sys
+import pathlib
 
 # Get the path to the mission directory
 mission_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,8 +28,12 @@ def readSeq(sPath):
 def writeResult(
     sSpecies, nMonoNtDict, fMonoFreqDict, nDiNtDict, fExpDiFreqDict, fDiFreqDict
 ):
+    # output the results into ./solutions/
+    out_dir = pathlib.Path(__file__) / "solutions"
+    out_dir.mkdir(exist_ok=True)
     sFileName = "{}genome.solutions.txt".format(sSpecies)
-    with open(sFileName, "w") as OutFile:
+
+    with open(out_dir / sFileName, "w") as OutFile:
         sMonoNtKeyList = sorted(list(nMonoNtDict.keys()))
         for sNuc in sMonoNtKeyList:
             nNum = nMonoNtDict[sNuc]
