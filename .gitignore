@@ -165,5 +165,6 @@ cython_debug/
 ## Project Specific
 # genome data directory
 data/
+!data/refFlat.txt
 # solution files
 solutions/
