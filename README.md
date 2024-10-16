@@ -4,4 +4,6 @@ The choice of using [Hungarian notation](https://en.wikipedia.org/wiki/Hungarian
 
 ## How to run
 
-Clone the repository and run `env_init.py` to download the necessary datasets.
+0. Clone the repo
+1. Run `download_data.sh` to download the data
+2. `python mission/00/Mission.py` to run the code (where you run the code is not important though)
