@@ -11,11 +11,6 @@ sys.path.insert(0, mission_dir)
 import path_modifier
 from mission import utils
 
-# Your mission code goes here
-
-
-from mission.utils import *
-
 # Last modified: 2019-04-11
 
 
