@@ -1,0 +1,6 @@
+name: csintro4bio
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - scipy
