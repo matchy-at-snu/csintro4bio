@@ -20,25 +20,29 @@ Use:
 | Exposure | $n_1$             | $n_2$                 |
 | Unexposure  | $n_3$             | $n_4$                 |
 
-Compute the fraction of genes that include the motif in highly downregulated genes (A) and the fraction of genes that include the motif in those that are not highly downregulated (B).
-
+### Relative task 
 $$
-A = $n_1$ / ($n_1$+$n_2$)
-B = $n_3$ / ($n_3$+$n_4$)
+A = n_1 / (n_1+n_2)
+B = n_3 / (n_3+n_4)
 $$
 
 $A / B$: relative risk.
 
-Odds in favor of disease in exposed group:		$C = n_1 / n_2$
-Odds in favor of disease in unexposed group:	$D = n_3 / n_4$
+### Disease odds ratio
 
-Disease odds ratio:
+- Odds in favor of disease in exposed group:		$C = n_1 / n_2$
+- Odds in favor of disease in unexposed group:	$D = n_3 / n_4$
+
 $$
 C / D = \frac{n_1 / n_2}{n_3 / n_4} = \frac{n_1 n_4}{n_2 n_3}
 $$
 
-Odds ratio > 1: a greater likelihood of disease among the exposed.
-Odds ratio < 1: a greater likelihood of disease among the unexposed.
+- Odds ratio > 1: a greater likelihood of disease among the exposed.
+- Odds ratio < 1: a greater likelihood of disease among the unexposed.
+
+## Additional analysis
+
+Compute the fraction of genes that include the motif in highly downregulated genes (A) and the fraction of genes that include the motif in those that are not highly downregulated (B).
 
 Then, the enrichment of the motif is $A/B$, and we will pick the motifs that have $A/B > 1.0$.
 
