@@ -152,21 +152,35 @@ def chrAnalysis(sSpecies):
 
 
 def main():
-    while True:
-        # Get Input
-        sSpecies = input(
-            (
-                "Please enter the species name that you want to analyse:\n"
-                "Species available:\n"
-                "human, chicken, Drosophila melanogaster(enter 'fruitfly'), C.elegans(enter 'celegans')\n"
-                "Enter 'end' if you would like to end the analysis.\n"
-                "The results will be stored in txt files.\n"
-            )
-        )
-        # Process
-        if sSpecies == "end":
-            break
-        chrAnalysis(sSpecies)
+    # while True:
+    #     # Get Input
+    #     sSpecies = input(
+    #         (
+    #             "Please enter the species name that you want to analyse:\n"
+    #             "Species available:\n"
+    #             "human, chicken, Drosophila melanogaster(enter 'fruitfly'), C.elegans(enter 'celegans')\n"
+    #             "Enter 'end' if you would like to end the analysis.\n"
+    #             "The results will be stored in txt files.\n"
+    #         )
+    #     )
+    #     # Process
+    #     if sSpecies == "end":
+    #         break
+    #     chrAnalysis(sSpecies)
+
+    # test if sys.argv is empty
+    if len(sys.argv) > 1:
+        for sSpecies in sys.argv[1:]:
+            if sSpecies not in ["human", "chicken", "fruitfly", "celegans"]:
+                print(
+                    "Species available:\n"
+                    "human, chicken, Drosophila melanogaster(enter 'fruitfly'), C.elegans(enter 'celegans')\n"
+                )
+                continue
+            chrAnalysis(sSpecies)
+    else:
+        for sSpecies in ["human", "chicken", "fruitfly", "celegans"]:
+            chrAnalysis(sSpecies)
     print("Genome analysis finished.")
     # end of main
 
