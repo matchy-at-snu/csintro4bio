@@ -180,7 +180,7 @@ def readRefSeq(sFileName):
 def writeRefSeq(cRefSeqList, sFileName="mission3.result.txt"):
     out_dir = pathlib.Path(__file__).parent / "solutions"
     out_dir.mkdir(exist_ok=True)
-    with open(sFileName, "w") as OutFile:
+    with open(out_dir / sFileName, "w") as OutFile:
         for cRefSeq in cRefSeqList:
             print(
                 cRefSeq.sNMID,
