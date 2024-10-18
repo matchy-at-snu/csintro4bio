@@ -164,7 +164,8 @@ cython_debug/
 
 ## Project Specific
 # genome data directory
-data/
+data/*
 !data/refFlat.txt
+!data/Mission4_Dataset.txt
 # solution files
 solutions/
